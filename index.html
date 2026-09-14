@@ -3,222 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人作品集 | Portfolio</title>
+    <title>個人學習歷程作品集</title>
+    <!-- 載入 Google 思源宋體 (Noto Serif TC) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.8; 
-            color: #2d3748; 
-            background: #f7fafc; 
-        }
-        header { 
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); 
-            color: white; 
-            padding: 4rem 1rem; 
-            text-align: center; 
-        }
-        header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; letter-spacing: 1px; }
-        header p { font-size: 1.2rem; color: #cbd5e0; }
-        
-        .container { max-width: 900px; margin: -2rem auto 3rem; padding: 0 1rem; }
-        section { 
-            background: white; 
-            padding: 2.5rem; 
-            border-radius: 12px; 
-            margin-bottom: 1.5rem; 
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        section:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        h2 { 
-            color: #2b6cb0; 
-            border-bottom: 2px solid #ebf8ff; 
-            padding-bottom: 0.5rem; 
-            margin-bottom: 1.5rem; 
-            font-size: 1.5rem;
+        :root {
+            --bg-color: #e5d3bf;        /* 經典卡其色背景 */
+            --card-bg: #f4eae1;         /* 溫柔奶茶色卡片背景 */
+            --inner-card-bg: #fbf7f3;   /* 淺奶茶色區塊背景 */
+            --text-main: #111111;       /* 極致深黑主文字 */
+            --text-sub: #2c2c2c;        /* 深灰黑副文字 */
+            --accent-color: #8c6d53;    /* 濃醇奶茶咖啡色邊框/強調 */
+            --border-color: #cbb8a3;   /* 卡其奶茶過渡邊框色 */
         }
 
-        /* 技能列表樣式 */
-        .skills-list { list-style: none; }
-        .skills-list li {
-            padding: 0.4rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        .skills-list li::before {
-            content: "✦";
-            position: absolute;
-            left: 0;
-            color: #3182ce;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        /* 科技概論課程卡片網格 */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.25rem;
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Noto Serif TC', serif;
+            line-height: 1.8;
         }
-        .card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 1.25rem;
+
+        /* 全螢幕滿版容器 */
+        .fullscreen-container {
+            width: 100%;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
-        .card:hover {
-            border-color: #3182ce;
-            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.1);
+
+        header {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-top: 6px solid var(--accent-color);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-        .week-badge {
-            font-size: 0.8rem;
+
+        header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             font-weight: 700;
-            color: #4a5568;
-            background: #edf2f7;
-            padding: 0.2rem 0.6rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        header p {
+            font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+            color: var(--text-sub);
+            font-weight: 600;
+        }
+
+        /* 年級展示區塊 */
+        .year-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .year-title {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            font-weight: 700;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .year-title::before {
+            content: '◆';
+            font-size: 0.9rem;
+            margin-right: 0.6rem;
+            color: var(--accent-color);
+        }
+
+        /* RWD 網格系統 */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--inner-card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
             border-radius: 6px;
         }
-        .status {
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-        }
-        .status.done { background: #c6f6d5; color: #22543d; }
-        .status.in-progress { background: #feebc8; color: #744210; }
-        .status.todo { background: #e2e8f0; color: #4a5568; }
 
-        .card h3 {
-            font-size: 1.1rem;
-            color: #1a202c;
+        .project-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
             margin-bottom: 0.5rem;
         }
-        .card p {
-            font-size: 0.9rem;
-            color: #718096;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-        .card-link {
-            font-size: 0.85rem;
-            color: #3182ce;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .card-link:hover { text-decoration: underline; }
 
-        .contact-btn { 
-            display: inline-block; 
-            background: #3182ce; 
-            color: white; 
-            padding: 0.75rem 1.5rem; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            margin-top: 1rem; 
-            font-weight: 600;
-            transition: background 0.2s ease;
+        .project-card p {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            font-weight: 400;
         }
-        .contact-btn:hover { background: #2b6cb0; }
+
+        .status-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 手機端微調 */
+        @media (max-width: 600px) {
+            .fullscreen-container {
+                padding: 1rem;
+            }
+            .year-section {
+                padding: 1.25rem;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>你的名字 (Your Name)</h1>
-        <p>大學生 / 未來全端工程師 / 專案創作者</p>
-    </header>
 
-    <div class="container">
-        <section>
-            <h2>關於我 (About Me)</h2>
-            <p>你好！我是大一新生。這是我的個人作品集網站，記錄我在大學四年間的專案歷程與技術成長。</p>
-        </section>
+    <div class="fullscreen-container">
+        <header>
+            <h1>郭育安的個人作品集</h1>
+            <p>累積與成長歷程 | 大一至大四學習作品集</p>
+        </header>
 
-        <!-- 科技概論課程進度卡片區塊 -->
-        <section>
-            <h2>💻 科技概論學習進度</h2>
-            <div class="card-grid">
-                
-                <!-- 週次卡片 1 -->
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <span class="week-badge">Week 01</span>
-                            <span class="status done">已完成</span>
-                        </div>
-                        <h3>個人作品集網站建置</h3>
-                        <p>學習 HTML/CSS 基礎語法，並透過 GitHub Pages 自動化部署第一個作品集網站。</p>
-                    </div>
-                    <a href="https://github.com/u11517044-william/pofolio-exampie" class="card-link" target="_blank">檢視 GitHub 專案 →</a>
+        <!-- 大一區塊 -->
+        <section class="year-section">
+            <h2 class="year-title">大一：基礎奠定與探索</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="status-badge">進行中</span>
+                    <h3>基礎程式設計與網頁應用</h3>
+                    <p>學習 HTML/CSS 基礎與 Git 版本控制，完成個人作品集網站雛型發佈。</p>
                 </div>
-
-                <!-- 週次卡片 2 -->
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <span class="week-badge">Week 02</span>
-                            <span class="status in-progress">進行中</span>
-                        </div>
-                        <h3>Git 與版本控制實戰</h3>
-                        <p>熟悉 Git 基本指令（commit, push, branch）與團隊協作流程。</p>
-                    </div>
-                    <a href="#" class="card-link">檢視筆記/專案 →</a>
+                <div class="project-card">
+                    <span class="status-badge">規劃中</span>
+                    <h3>基礎程式語言專題</h3>
+                    <p>利用基礎程式邏輯進行小型專題實作，累積寫程式的基礎感受。</p>
                 </div>
-
-                <!-- 週次卡片 3 -->
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <span class="week-badge">Week 03</span>
-                            <span class="status todo">規劃中</span>
-                        </div>
-                        <h3>JavaScript 動態網頁基礎</h3>
-                        <p>學習 DOM 操作與事件處理，替個人網站加入互動效果。</p>
-                    </div>
-                    <a href="#" class="card-link">檢視筆記/專案 →</a>
-                </div>
-
-                <!-- 週次卡片 4 -->
-                <div class="card">
-                    <div>
-                        <div class="card-header">
-                            <span class="week-badge">Week 04</span>
-                            <span class="status todo">規劃中</span>
-                        </div>
-                        <h3>期中專案開發</h3>
-                        <p>整合前端技術，開發兼具功能性與視覺體驗的實作專案。</p>
-                    </div>
-                    <a href="#" class="card-link">檢視筆記/專案 →</a>
-                </div>
-
             </div>
         </section>
 
-        <section>
-            <h2>專業技能 (Skills)</h2>
-            <ul class="skills-list">
-                <li>前端開發：HTML, CSS, JavaScript (學習中)</li>
-                <li>工具與版本控制：Git, GitHub</li>
-                <li>軟實力：問題解決、團隊合作、快速學習</li>
-            </ul>
+        <!-- 大二區塊 -->
+        <section class="year-section">
+            <h2 class="year-title">大二：核心技能與進階應用</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="status-badge">未開始</span>
+                    <h3>領域核心專題（預留）</h3>
+                    <p>深化專業領域核心技能，訓練獨立思考與解決問題的能力。</p>
+                </div>
+                <div class="project-card">
+                    <span class="status-badge">未開始</span>
+                    <h3>跨領域合作實作</h3>
+                    <p>嘗試與不同領域同學合作，鍛鍊團隊溝通與跨域整合實力。</p>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>聯絡方式 (Contact)</h2>
-            <p>Email: your-email@example.com</p>
-            <a href="https://github.com/u11517044-william" class="contact-btn" target="_blank">造訪我的 GitHub</a>
+        <!-- 大三區塊 -->
+        <section class="year-section">
+            <h2 class="year-title">大三：實務整合與跨域挑戰</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="status-badge">未開始</span>
+                    <h3>畢業專題 / 代表作計畫</h3>
+                    <p>針對特定議題進行系統性的研究與開發，打造極具代表性的作品。</p>
+                </div>
+                <div class="project-card">
+                    <span class="status-badge">未開始</span>
+                    <h3>實務實習或競賽參與</h3>
+                    <p>將所學投入真實場域，積攢業界實務體驗與競賽經歷。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 大四區塊 -->
+        <section class="year-section">
+            <h2 class="year-title">大四：職務精進與總整產出</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <span class="status-badge">未開始</span>
+                    <h3>完整專業作品集 (Portfolio)</h3>
+                    <p>精緻化四年所有專題成果，呈現能夠直接對接職場與業主的高品質作品集。</p>
+                </div>
+            </div>
         </section>
     </div>
+
 </body>
 </html>
