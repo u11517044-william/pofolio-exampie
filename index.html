@@ -20,7 +20,8 @@
         }
         header h1 { font-size: 2.8rem; margin-bottom: 0.5rem; letter-spacing: 1px; }
         header p { font-size: 1.2rem; color: #cbd5e0; }
-        .container { max-width: 800px; margin: -2rem auto 3rem; padding: 0 1rem; }
+        
+        .container { max-width: 900px; margin: -2rem auto 3rem; padding: 0 1rem; }
         section { 
             background: white; 
             padding: 2.5rem; 
@@ -37,21 +38,87 @@
             color: #2b6cb0; 
             border-bottom: 2px solid #ebf8ff; 
             padding-bottom: 0.5rem; 
-            margin-bottom: 1.2rem; 
+            margin-bottom: 1.5rem; 
             font-size: 1.5rem;
         }
-        ul { list-style: none; }
-        ul li {
-            padding: 0.5rem 0;
+
+        /* 技能列表樣式 */
+        .skills-list { list-style: none; }
+        .skills-list li {
+            padding: 0.4rem 0;
             position: relative;
             padding-left: 1.5rem;
         }
-        ul li::before {
+        .skills-list li::before {
             content: "✦";
             position: absolute;
             left: 0;
             color: #3182ce;
         }
+
+        /* 科技概論課程卡片網格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+        }
+        .card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            border-color: #3182ce;
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.1);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .week-badge {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #4a5568;
+            background: #edf2f7;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+        }
+        .status {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+        .status.done { background: #c6f6d5; color: #22543d; }
+        .status.in-progress { background: #feebc8; color: #744210; }
+        .status.todo { background: #e2e8f0; color: #4a5568; }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            font-size: 0.9rem;
+            color: #718096;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        .card-link {
+            font-size: 0.85rem;
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .card-link:hover { text-decoration: underline; }
+
         .contact-btn { 
             display: inline-block; 
             background: #3182ce; 
@@ -78,19 +145,73 @@
             <p>你好！我是大一新生。這是我的個人作品集網站，記錄我在大學四年間的專案歷程與技術成長。</p>
         </section>
 
+        <!-- 科技概論課程進度卡片區塊 -->
+        <section>
+            <h2>💻 科技概論學習進度</h2>
+            <div class="card-grid">
+                
+                <!-- 週次卡片 1 -->
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <span class="week-badge">Week 01</span>
+                            <span class="status done">已完成</span>
+                        </div>
+                        <h3>個人作品集網站建置</h3>
+                        <p>學習 HTML/CSS 基礎語法，並透過 GitHub Pages 自動化部署第一個作品集網站。</p>
+                    </div>
+                    <a href="https://github.com/u11517044-william/pofolio-exampie" class="card-link" target="_blank">檢視 GitHub 專案 →</a>
+                </div>
+
+                <!-- 週次卡片 2 -->
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <span class="week-badge">Week 02</span>
+                            <span class="status in-progress">進行中</span>
+                        </div>
+                        <h3>Git 與版本控制實戰</h3>
+                        <p>熟悉 Git 基本指令（commit, push, branch）與團隊協作流程。</p>
+                    </div>
+                    <a href="#" class="card-link">檢視筆記/專案 →</a>
+                </div>
+
+                <!-- 週次卡片 3 -->
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <span class="week-badge">Week 03</span>
+                            <span class="status todo">規劃中</span>
+                        </div>
+                        <h3>JavaScript 動態網頁基礎</h3>
+                        <p>學習 DOM 操作與事件處理，替個人網站加入互動效果。</p>
+                    </div>
+                    <a href="#" class="card-link">檢視筆記/專案 →</a>
+                </div>
+
+                <!-- 週次卡片 4 -->
+                <div class="card">
+                    <div>
+                        <div class="card-header">
+                            <span class="week-badge">Week 04</span>
+                            <span class="status todo">規劃中</span>
+                        </div>
+                        <h3>期中專案開發</h3>
+                        <p>整合前端技術，開發兼具功能性與視覺體驗的實作專案。</p>
+                    </div>
+                    <a href="#" class="card-link">檢視筆記/專案 →</a>
+                </div>
+
+            </div>
+        </section>
+
         <section>
             <h2>專業技能 (Skills)</h2>
-            <ul>
+            <ul class="skills-list">
                 <li>前端開發：HTML, CSS, JavaScript (學習中)</li>
                 <li>工具與版本控制：Git, GitHub</li>
                 <li>軟實力：問題解決、團隊合作、快速學習</li>
             </ul>
-        </section>
-
-        <section>
-            <h2>專案作品 (Projects)</h2>
-            <p><strong>個人作品集網站 (Portfolio Website)</strong></p>
-            <p>使用 HTML/CSS 打造，並透過 GitHub Pages 進行自動化部署與託管。</p>
         </section>
 
         <section>
