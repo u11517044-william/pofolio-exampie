@@ -172,6 +172,138 @@
                     <h3>基礎程式設計與網頁應用</h3>
                     <p>學習 HTML/CSS 基礎與 Git 版本控制，完成個人作品集網站雛型發佈。</p>
                 </div>
+               <!-- ================= 數位科技概論課程成果 開始 ================= -->
+<style>
+  /* 數位科技概論外層容器 */
+  .course-section {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px dashed #334155; /* 上方虛線分隔線 */
+  }
+
+  .course-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .course-title-icon {
+    color: #10b981; /* 綠色鑽石/菱形 */
+    font-size: 1.1rem;
+  }
+
+  .course-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  /* 作品集網格卡片 */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  /* 單一作品卡片風格（與原本網站一致） */
+  .portfolio-card {
+    background-color: #1e293b; /* 深灰藍背景 */
+    border: 1px solid #334155;  /* 邊框 */
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.25s ease;
+  }
+
+  /* 滑鼠懸停效果：綠色外框與發光 */
+  .portfolio-card:hover {
+    border-color: #10b981;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* 狀態標籤 (綠色) */
+  .badge-status {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid #10b981;
+    color: #10b981;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .portfolio-card h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+  }
+
+  .portfolio-card p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+  }
+
+  .btn-view-work {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background-color: transparent;
+    border: 1px solid #10b981;
+    color: #10b981;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .btn-view-work:hover {
+    background-color: #10b981;
+    color: #0f172a;
+  }
+</style>
+
+<div class="course-section">
+  <!-- 區塊標題 -->
+  <div class="course-title-wrap">
+    <span class="course-title-icon">◆</span>
+    <h3 class="course-title">數位科技概論課程成果</h3>
+  </div>
+
+  <!-- 作品集網格 -->
+  <div class="portfolio-grid">
+    
+    <!-- 作品 1：水與生活探索日 -->
+    <div class="portfolio-card">
+      <span class="badge-status">已完成</span>
+      <h4>水與生活：小小科學探索日</h4>
+      <p>針對國小中年級設計的科學探索課程，引導學生觀察水的三態變化與認識 H₂O 化學式[cite: 6]。</p>
+      <a href="01-html-text-11517044_2.html" class="btn-view-work" target="_blank">
+        檢視作品成果 ➔
+      </a>
+    </div>
+
+    <!-- 作品 2：預留位置（可自行新增或修改內容） -->
+    <div class="portfolio-card">
+      <span class="badge-status">進行中</span>
+      <h4>數位科技主題專題報告</h4>
+      <p>探討新興數位科技趨勢及其在生活中的應用與創新範例。</p>
+      <a href="#" class="btn-view-work">
+        檢視作品成果 ➔
+      </a>
+    </div>
+
+  </div>
+</div>
+<!-- ================= 數位科技概論課程成果 結束 ================= -->
+                
                 <div class="project-card">
                     <span class="status-badge">規劃中</span>
                     <h3>基礎程式語言專題</h3>
