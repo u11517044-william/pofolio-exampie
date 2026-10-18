@@ -129,22 +129,18 @@
             font-weight: 400;
         }
 
+        /* 狀態標籤：統一為綠底黑字 */
         .status-badge {
             display: inline-block;
+            align-self: flex-start;   /* 在 flex 卡片中不被拉滿整排，維持標籤大小 */
             font-size: 0.75rem;
             font-weight: 700;
             padding: 0.2rem 0.6rem;
-            background-color: transparent;
-            color: var(--accent-color);
+            background-color: var(--accent-color);
+            color: #000000;
             border: 1px solid var(--accent-color);
             border-radius: 3px;
             margin-bottom: 0.8rem;
-        }
-
-        /* 已完成：實心亮綠標籤 */
-        .status-badge.is-done {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
         }
 
         /* 課程卡片：可點擊，右下角提示 */
@@ -383,7 +379,7 @@
                 <a class="project-card project-link"
                    href="https://u11517044-william.github.io/typing-history/index.html"
                    target="_blank" rel="noopener noreferrer">
-                    <span class="status-badge is-done">已完成</span>
+                    <span class="status-badge">已完成</span>
                     <h3>基礎程式語言專題（英打遊戲開發歷程）</h3>
                     <p>透過 Agentic Coding 打造五階段漸進式英打遊戲，涵蓋靜態頁面、多媒體應用、ASDF／十鍵練習與高塔 Boss 戰。</p>
                     <span class="card-action">查看開發歷程</span>
